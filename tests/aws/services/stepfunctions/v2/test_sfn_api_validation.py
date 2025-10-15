@@ -27,15 +27,21 @@ class TestSfnApiValidation:
     def test_validate_state_machine_definition_not_a_definition(
         self, sfn_snapshot, aws_client, definition_string
     ):
-        validation_response = aws_client.stepfunctions.validate_state_machine_definition(
-            definition=definition_string, type=StateMachineType.STANDARD
+        validation_response = (
+            aws_client.stepfunctions.validate_state_machine_definition(
+                definition=definition_string, type=StateMachineType.STANDARD
+            )
         )
         sfn_snapshot.match("validation_response", validation_response)
 
     @pytest.mark.parametrize(
         "validation_template",
-        [ValidationTemplate.VALID_BASE_PASS, ValidationTemplate.INVALID_BASE_NO_STARTAT],
-        ids=["VALID_BASE_PASS", "INVALID_BASE_NO_STARTAT"],
+        [
+            ValidationTemplate.VALID_BASE_PASS,
+            ValidationTemplate.VALID_QUERY_LANGUAGE_PASS,
+            ValidationTemplate.INVALID_BASE_NO_STARTAT,
+        ],
+        ids=["VALID_BASE_PASS", "VALID_QUERY_LANGUAGE_PASS", "INVALID_BASE_NO_STARTAT"],
     )
     @markers.aws.validated
     def test_validate_state_machine_definition_type_standard(
@@ -43,8 +49,10 @@ class TestSfnApiValidation:
     ):
         definition = ValidationTemplate.load_sfn_template(validation_template)
         definition_str = json.dumps(definition)
-        validation_response = aws_client.stepfunctions.validate_state_machine_definition(
-            definition=definition_str, type=StateMachineType.STANDARD
+        validation_response = (
+            aws_client.stepfunctions.validate_state_machine_definition(
+                definition=definition_str, type=StateMachineType.STANDARD
+            )
         )
         sfn_snapshot.match("validation_response", validation_response)
 
@@ -63,7 +71,9 @@ class TestSfnApiValidation:
     ):
         definition = ValidationTemplate.load_sfn_template(validation_template)
         definition_str = json.dumps(definition)
-        validation_response = aws_client.stepfunctions.validate_state_machine_definition(
-            definition=definition_str, type=StateMachineType.EXPRESS
+        validation_response = (
+            aws_client.stepfunctions.validate_state_machine_definition(
+                definition=definition_str, type=StateMachineType.EXPRESS
+            )
         )
         sfn_snapshot.match("validation_response", validation_response)
