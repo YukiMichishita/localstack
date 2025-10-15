@@ -7,13 +7,17 @@ from antlr4.tree.Tree import ParseTree, TerminalNodeImpl
 
 from localstack.services.stepfunctions.asl.antlr.runtime.ASLLexer import ASLLexer
 from localstack.services.stepfunctions.asl.antlr.runtime.ASLParser import ASLParser
-from localstack.services.stepfunctions.asl.antlr.runtime.ASLParserVisitor import ASLParserVisitor
+from localstack.services.stepfunctions.asl.antlr.runtime.ASLParserVisitor import (
+    ASLParserVisitor,
+)
 from localstack.services.stepfunctions.asl.antlt4utils.antlr4utils import (
     from_string_literal,
     is_production,
     is_terminal,
 )
-from localstack.services.stepfunctions.asl.component.common.assign.assign_decl import AssignDecl
+from localstack.services.stepfunctions.asl.component.common.assign.assign_decl import (
+    AssignDecl,
+)
 from localstack.services.stepfunctions.asl.component.common.assign.assign_decl_binding import (
     AssignDeclBinding,
 )
@@ -36,9 +40,15 @@ from localstack.services.stepfunctions.asl.component.common.assign.assign_templa
     AssignTemplateValueTerminalLit,
     AssignTemplateValueTerminalStringJSONata,
 )
-from localstack.services.stepfunctions.asl.component.common.catch.catch_decl import CatchDecl
-from localstack.services.stepfunctions.asl.component.common.catch.catcher_decl import CatcherDecl
-from localstack.services.stepfunctions.asl.component.common.catch.catcher_props import CatcherProps
+from localstack.services.stepfunctions.asl.component.common.catch.catch_decl import (
+    CatchDecl,
+)
+from localstack.services.stepfunctions.asl.component.common.catch.catcher_decl import (
+    CatcherDecl,
+)
+from localstack.services.stepfunctions.asl.component.common.catch.catcher_props import (
+    CatcherProps,
+)
 from localstack.services.stepfunctions.asl.component.common.comment import Comment
 from localstack.services.stepfunctions.asl.component.common.error_name.custom_error_name import (
     CustomErrorName,
@@ -46,7 +56,9 @@ from localstack.services.stepfunctions.asl.component.common.error_name.custom_er
 from localstack.services.stepfunctions.asl.component.common.error_name.error_equals_decl import (
     ErrorEqualsDecl,
 )
-from localstack.services.stepfunctions.asl.component.common.error_name.error_name import ErrorName
+from localstack.services.stepfunctions.asl.component.common.error_name.error_name import (
+    ErrorName,
+)
 from localstack.services.stepfunctions.asl.component.common.error_name.states_error_name import (
     StatesErrorName,
 )
@@ -79,10 +91,18 @@ from localstack.services.stepfunctions.asl.component.common.parargs import (
     Parameters,
     Parargs,
 )
-from localstack.services.stepfunctions.asl.component.common.path.input_path import InputPath
-from localstack.services.stepfunctions.asl.component.common.path.items_path import ItemsPath
-from localstack.services.stepfunctions.asl.component.common.path.output_path import OutputPath
-from localstack.services.stepfunctions.asl.component.common.path.result_path import ResultPath
+from localstack.services.stepfunctions.asl.component.common.path.input_path import (
+    InputPath,
+)
+from localstack.services.stepfunctions.asl.component.common.path.items_path import (
+    ItemsPath,
+)
+from localstack.services.stepfunctions.asl.component.common.path.output_path import (
+    OutputPath,
+)
+from localstack.services.stepfunctions.asl.component.common.path.result_path import (
+    ResultPath,
+)
 from localstack.services.stepfunctions.asl.component.common.payload.payloadvalue.payload_value import (
     PayloadValue,
 )
@@ -116,7 +136,9 @@ from localstack.services.stepfunctions.asl.component.common.query_language impor
     QueryLanguage,
     QueryLanguageMode,
 )
-from localstack.services.stepfunctions.asl.component.common.result_selector import ResultSelector
+from localstack.services.stepfunctions.asl.component.common.result_selector import (
+    ResultSelector,
+)
 from localstack.services.stepfunctions.asl.component.common.retry.backoff_rate_decl import (
     BackoffRateDecl,
 )
@@ -133,9 +155,15 @@ from localstack.services.stepfunctions.asl.component.common.retry.max_attempts_d
 from localstack.services.stepfunctions.asl.component.common.retry.max_delay_seconds_decl import (
     MaxDelaySecondsDecl,
 )
-from localstack.services.stepfunctions.asl.component.common.retry.retrier_decl import RetrierDecl
-from localstack.services.stepfunctions.asl.component.common.retry.retrier_props import RetrierProps
-from localstack.services.stepfunctions.asl.component.common.retry.retry_decl import RetryDecl
+from localstack.services.stepfunctions.asl.component.common.retry.retrier_decl import (
+    RetrierDecl,
+)
+from localstack.services.stepfunctions.asl.component.common.retry.retrier_props import (
+    RetrierProps,
+)
+from localstack.services.stepfunctions.asl.component.common.retry.retry_decl import (
+    RetryDecl,
+)
 from localstack.services.stepfunctions.asl.component.common.string.string_expression import (
     StringContextPath,
     StringExpression,
@@ -291,15 +319,23 @@ from localstack.services.stepfunctions.asl.component.state.state_fail.error_decl
     Error,
     ErrorPath,
 )
-from localstack.services.stepfunctions.asl.component.state.state_fail.state_fail import StateFail
-from localstack.services.stepfunctions.asl.component.state.state_pass.result import Result
-from localstack.services.stepfunctions.asl.component.state.state_pass.state_pass import StatePass
+from localstack.services.stepfunctions.asl.component.state.state_fail.state_fail import (
+    StateFail,
+)
+from localstack.services.stepfunctions.asl.component.state.state_pass.result import (
+    Result,
+)
+from localstack.services.stepfunctions.asl.component.state.state_pass.state_pass import (
+    StatePass,
+)
 from localstack.services.stepfunctions.asl.component.state.state_props import StateProps
 from localstack.services.stepfunctions.asl.component.state.state_succeed.state_succeed import (
     StateSucceed,
 )
 from localstack.services.stepfunctions.asl.component.state.state_type import StateType
-from localstack.services.stepfunctions.asl.component.state.state_wait.state_wait import StateWait
+from localstack.services.stepfunctions.asl.component.state.state_wait.state_wait import (
+    StateWait,
+)
 from localstack.services.stepfunctions.asl.component.state.state_wait.wait_function.seconds import (
     Seconds,
     SecondsJSONata,
@@ -311,7 +347,9 @@ from localstack.services.stepfunctions.asl.component.state.state_wait.wait_funct
     Timestamp,
     TimestampPath,
 )
-from localstack.services.stepfunctions.asl.parse.intrinsic.intrinsic_parser import IntrinsicParser
+from localstack.services.stepfunctions.asl.parse.intrinsic.intrinsic_parser import (
+    IntrinsicParser,
+)
 from localstack.services.stepfunctions.asl.parse.typed_props import TypedProps
 
 LOG = logging.getLogger(__name__)
@@ -323,17 +361,22 @@ class Preprocessor(ASLParserVisitor):
     def _get_current_query_language(self) -> QueryLanguage:
         return self._query_language_per_scope[-1]
 
+    def _get_top_level_query_language(self) -> QueryLanguage:
+        return self._query_language_per_scope[0]
+
     def _open_query_language_scope(self, parse_tree: ParseTree) -> None:
         production = is_production(parse_tree)
         if production is None:
-            raise RuntimeError(f"Cannot expect QueryLanguage definition at depth: {parse_tree}")
+            raise RuntimeError(
+                f"Cannot expect QueryLanguage definition at depth: {parse_tree}"
+            )
 
         # Extract the QueryLanguage declaration at this ParseTree level, if any.
         query_language = None
         for child in production.children:
-            sub_production = is_production(child, ASLParser.RULE_top_layer_stmt) or is_production(
-                child, ASLParser.RULE_state_stmt
-            )
+            sub_production = is_production(
+                child, ASLParser.RULE_top_layer_stmt
+            ) or is_production(child, ASLParser.RULE_state_stmt)
             if sub_production is not None:
                 child = sub_production.children[0]
             sub_production = is_production(child, ASLParser.RULE_query_language_decl)
@@ -347,11 +390,11 @@ class Preprocessor(ASLParserVisitor):
                 query_language = QueryLanguage()
         # Otherwise, check for logical conflicts and add the latest or inherited value to as the next scope.
         else:
-            current_query_language = self._get_current_query_language()
+            top_query_language = self._get_top_level_query_language()
             if query_language is None:
-                query_language = current_query_language
+                query_language = top_query_language
             if (
-                current_query_language.query_language_mode == QueryLanguageMode.JSONata
+                top_query_language.query_language_mode == QueryLanguageMode.JSONata
                 and query_language.query_language_mode == QueryLanguageMode.JSONPath
             ):
                 raise ValueError(
@@ -385,7 +428,9 @@ class Preprocessor(ASLParserVisitor):
         return inner_str
 
     def _inner_jsonata_expr(self, ctx: ParserRuleContext) -> str:
-        self._raise_if_query_language_is_not(query_language_mode=QueryLanguageMode.JSONata, ctx=ctx)
+        self._raise_if_query_language_is_not(
+            query_language_mode=QueryLanguageMode.JSONata, ctx=ctx
+        )
         inner_string_value = from_string_literal(parser_rule_context=ctx)
         # Strip the start and end jsonata symbols {%<body>%}
         expression_body = inner_string_value[2:-2]
@@ -431,7 +476,9 @@ class Preprocessor(ASLParserVisitor):
         bool_child: ParseTree = ctx.children[-1]
         bool_term: TerminalNodeImpl | None = is_terminal(bool_child)
         if bool_term is None:
-            raise ValueError(f"Could not derive End from declaration context '{ctx.getText()}'")
+            raise ValueError(
+                f"Could not derive End from declaration context '{ctx.getText()}'"
+            )
         bool_term_rule: int = bool_term.getSymbol().type
         is_end = bool_term_rule == ASLLexer.TRUE
         return End(is_end=is_end)
@@ -440,7 +487,9 @@ class Preprocessor(ASLParserVisitor):
         inner_str = self._inner_string_of(parser_rule_context=ctx.string_literal())
         return Next(name=inner_str)
 
-    def visitResult_path_decl(self, ctx: ASLParser.Result_path_declContext) -> ResultPath:
+    def visitResult_path_decl(
+        self, ctx: ASLParser.Result_path_declContext
+    ) -> ResultPath:
         self._raise_if_query_language_is_not(
             query_language_mode=QueryLanguageMode.JSONPath, ctx=ctx
         )
@@ -450,10 +499,14 @@ class Preprocessor(ASLParserVisitor):
     def visitInput_path_decl(self, ctx: ASLParser.Input_path_declContext) -> InputPath:
         string_sampler: StringSampler | None = None
         if not is_terminal(pt=ctx.children[-1], token_type=ASLLexer.NULL):
-            string_sampler: StringSampler = self.visitString_sampler(ctx.string_sampler())
+            string_sampler: StringSampler = self.visitString_sampler(
+                ctx.string_sampler()
+            )
         return InputPath(string_sampler=string_sampler)
 
-    def visitOutput_path_decl(self, ctx: ASLParser.Output_path_declContext) -> OutputPath:
+    def visitOutput_path_decl(
+        self, ctx: ASLParser.Output_path_declContext
+    ) -> OutputPath:
         self._raise_if_query_language_is_not(
             query_language_mode=QueryLanguageMode.JSONPath, ctx=ctx
         )
@@ -475,7 +528,9 @@ class Preprocessor(ASLParserVisitor):
         payload_tmpl: PayloadTmpl = self.visit(ctx.payload_tmpl_decl())
         return Parameters(payload_tmpl=payload_tmpl)
 
-    def visitTimeout_seconds_int(self, ctx: ASLParser.Timeout_seconds_intContext) -> TimeoutSeconds:
+    def visitTimeout_seconds_int(
+        self, ctx: ASLParser.Timeout_seconds_intContext
+    ) -> TimeoutSeconds:
         seconds = int(ctx.INT().getText())
         return TimeoutSeconds(timeout_seconds=seconds)
 
@@ -580,8 +635,12 @@ class Preprocessor(ASLParserVisitor):
         state.from_state_props(state_props)
         return state
 
-    def visitCondition_lit(self, ctx: ASLParser.Condition_litContext) -> ConditionJSONataLit:
-        self._raise_if_query_language_is_not(query_language_mode=QueryLanguageMode.JSONata, ctx=ctx)
+    def visitCondition_lit(
+        self, ctx: ASLParser.Condition_litContext
+    ) -> ConditionJSONataLit:
+        self._raise_if_query_language_is_not(
+            query_language_mode=QueryLanguageMode.JSONata, ctx=ctx
+        )
         bool_child: ParseTree = ctx.children[-1]
         bool_term: TerminalNodeImpl | None = is_terminal(bool_child)
         if bool_term is None:
@@ -595,17 +654,23 @@ class Preprocessor(ASLParserVisitor):
     def visitCondition_string_jsonata(
         self, ctx: ASLParser.Condition_string_jsonataContext
     ) -> ConditionStringJSONata:
-        string_jsonata: StringJSONata = self.visitString_jsonata(ctx=ctx.string_jsonata())
+        string_jsonata: StringJSONata = self.visitString_jsonata(
+            ctx=ctx.string_jsonata()
+        )
         return ConditionStringJSONata(string_jsonata=string_jsonata)
 
     def visitVariable_decl(self, ctx: ASLParser.Variable_declContext) -> Variable:
         self._raise_if_query_language_is_not(
             query_language_mode=QueryLanguageMode.JSONPath, ctx=ctx
         )
-        string_sampler: StringSampler = self.visitString_sampler(ctx=ctx.string_sampler())
+        string_sampler: StringSampler = self.visitString_sampler(
+            ctx=ctx.string_sampler()
+        )
         return Variable(string_sampler=string_sampler)
 
-    def visitComparison_op(self, ctx: ASLParser.Comparison_opContext) -> ComparisonOperatorType:
+    def visitComparison_op(
+        self, ctx: ASLParser.Comparison_opContext
+    ) -> ComparisonOperatorType:
         self._raise_if_query_language_is_not(
             query_language_mode=QueryLanguageMode.JSONPath, ctx=ctx
         )
@@ -613,7 +678,9 @@ class Preprocessor(ASLParserVisitor):
             operator_type: int = ctx.children[0].symbol.type
             return ComparisonOperatorType(operator_type)
         except Exception:
-            raise ValueError(f"Could not derive ComparisonOperator from context '{ctx.getText()}'.")
+            raise ValueError(
+                f"Could not derive ComparisonOperator from context '{ctx.getText()}'."
+            )
 
     def visitComparison_func_value(
         self, ctx: ASLParser.Comparison_func_valueContext
@@ -653,7 +720,9 @@ class Preprocessor(ASLParserVisitor):
         )
         pt: TerminalNodeImpl | None = is_terminal(ctx.children[0])
         if not pt:
-            raise ValueError(f"Could not derive ChoiceOperator in block '{ctx.getText()}'.")
+            raise ValueError(
+                f"Could not derive ChoiceOperator in block '{ctx.getText()}'."
+            )
         return ComparisonComposite.ChoiceOp(pt.symbol.type)
 
     def visitComparison_composite(
@@ -721,8 +790,12 @@ class Preprocessor(ASLParserVisitor):
                 ),
             )
             if not isinstance(comparison_func, ComparisonFunc):
-                raise ValueError(f"Expected a ComparisonFunction declaration in '{ctx.getText()}'")
-            comparison_variable = ComparisonVariable(variable=variable, func=comparison_func)
+                raise ValueError(
+                    f"Expected a ComparisonFunction declaration in '{ctx.getText()}'"
+                )
+            comparison_variable = ComparisonVariable(
+                variable=variable, func=comparison_func
+            )
             return ChoiceRule(
                 comparison=comparison_variable,
                 next_stmt=comparison_stmts.get(Next),
@@ -785,19 +858,23 @@ class Preprocessor(ASLParserVisitor):
         self._raise_if_query_language_is_not(
             query_language_mode=QueryLanguageMode.JSONPath, ctx=ctx
         )
-        string_expression_simple: StringExpressionSimple = self.visitString_expression_simple(
-            ctx=ctx.string_expression_simple()
+        string_expression_simple: StringExpressionSimple = (
+            self.visitString_expression_simple(ctx=ctx.string_expression_simple())
         )
         return RoleArn(string_expression=string_expression_simple)
 
-    def visitCredentials_decl(self, ctx: ASLParser.Credentials_declContext) -> Credentials:
+    def visitCredentials_decl(
+        self, ctx: ASLParser.Credentials_declContext
+    ) -> Credentials:
         role_arn: RoleArn = self.visit(ctx.role_arn_decl())
         return Credentials(role_arn=role_arn)
 
     def visitSeconds_int(self, ctx: ASLParser.Seconds_intContext) -> Seconds:
         return Seconds(seconds=int(ctx.INT().getText()))
 
-    def visitSeconds_jsonata(self, ctx: ASLParser.Seconds_jsonataContext) -> SecondsJSONata:
+    def visitSeconds_jsonata(
+        self, ctx: ASLParser.Seconds_jsonataContext
+    ) -> SecondsJSONata:
         string_jsonata: StringJSONata = self.visitString_jsonata(ctx.string_jsonata())
         return SecondsJSONata(string_jsonata=string_jsonata)
 
@@ -805,7 +882,9 @@ class Preprocessor(ASLParserVisitor):
         self._raise_if_query_language_is_not(
             query_language_mode=QueryLanguageMode.JSONPath, ctx=ctx
         )
-        string_sampler: StringSampler = self.visitString_sampler(ctx=ctx.string_sampler())
+        string_sampler: StringSampler = self.visitString_sampler(
+            ctx=ctx.string_sampler()
+        )
         return SecondsPath(string_sampler=string_sampler)
 
     def visitItems_path_decl(self, ctx: ASLParser.Items_path_declContext) -> ItemsPath:
@@ -815,7 +894,9 @@ class Preprocessor(ASLParserVisitor):
         string_sampler: StringSampler = self.visitString_sampler(ctx.string_sampler())
         return ItemsPath(string_sampler=string_sampler)
 
-    def visitMax_concurrency_int(self, ctx: ASLParser.Max_concurrency_intContext) -> MaxConcurrency:
+    def visitMax_concurrency_int(
+        self, ctx: ASLParser.Max_concurrency_intContext
+    ) -> MaxConcurrency:
         return MaxConcurrency(num=int(ctx.INT().getText()))
 
     def visitMax_concurrency_jsonata(
@@ -840,7 +921,9 @@ class Preprocessor(ASLParserVisitor):
     def visitMode_type(self, ctx: ASLParser.Mode_typeContext) -> int:
         return ctx.children[0].symbol.type
 
-    def visitExecution_decl(self, ctx: ASLParser.Execution_declContext) -> ExecutionType:
+    def visitExecution_decl(
+        self, ctx: ASLParser.Execution_declContext
+    ) -> ExecutionType:
         execution_type: int = self.visit(ctx.execution_type())
         return ExecutionType(execution_type)
 
@@ -851,7 +934,9 @@ class Preprocessor(ASLParserVisitor):
         string: StringExpression = self.visit(ctx.children[-1])
         return Timestamp(string=string)
 
-    def visitTimestamp_path(self, ctx: ASLParser.Timestamp_pathContext) -> TimestampPath:
+    def visitTimestamp_path(
+        self, ctx: ASLParser.Timestamp_pathContext
+    ) -> TimestampPath:
         self._raise_if_query_language_is_not(
             query_language_mode=QueryLanguageMode.JSONPath, ctx=ctx
         )
@@ -867,10 +952,13 @@ class Preprocessor(ASLParserVisitor):
             props.add(cmp)
         return ProcessorConfig(
             mode=props.get(typ=Mode) or ProcessorConfig.DEFAULT_MODE,
-            execution_type=props.get(typ=ExecutionType) or ProcessorConfig.DEFAULT_EXECUTION_TYPE,
+            execution_type=props.get(typ=ExecutionType)
+            or ProcessorConfig.DEFAULT_EXECUTION_TYPE,
         )
 
-    def visitItem_processor_item(self, ctx: ASLParser.Item_processor_itemContext) -> Component:
+    def visitItem_processor_item(
+        self, ctx: ASLParser.Item_processor_itemContext
+    ) -> Component:
         return self.visit(ctx.children[0])
 
     def visitItem_processor_decl(
@@ -890,7 +978,9 @@ class Preprocessor(ASLParserVisitor):
             ),
             states=props.get(
                 typ=States,
-                raise_on_missing=ValueError(f"Expected a States declaration at '{ctx.getText()}'."),
+                raise_on_missing=ValueError(
+                    f"Expected a States declaration at '{ctx.getText()}'."
+                ),
             ),
             comment=props.get(typ=Comment),
             processor_config=props.get(typ=ProcessorConfig) or ProcessorConfig(),
@@ -912,25 +1002,33 @@ class Preprocessor(ASLParserVisitor):
             ),
             states=props.get(
                 typ=States,
-                raise_on_missing=ValueError(f"Expected a States declaration at '{ctx.getText()}'."),
+                raise_on_missing=ValueError(
+                    f"Expected a States declaration at '{ctx.getText()}'."
+                ),
             ),
             processor_config=props.get(typ=ProcessorConfig) or ProcessorConfig(),
         )
 
-    def visitItem_selector_decl(self, ctx: ASLParser.Item_selector_declContext) -> ItemSelector:
+    def visitItem_selector_decl(
+        self, ctx: ASLParser.Item_selector_declContext
+    ) -> ItemSelector:
         template_value_object = self.visitAssign_template_value_object(
             ctx=ctx.assign_template_value_object()
         )
         return ItemSelector(template_value_object=template_value_object)
 
-    def visitItem_reader_decl(self, ctx: ASLParser.Item_reader_declContext) -> ItemReader:
+    def visitItem_reader_decl(
+        self, ctx: ASLParser.Item_reader_declContext
+    ) -> ItemReader:
         props = StateProps()
         for child in ctx.children[3:-1]:
             cmp = self.visit(child)
             props.add(cmp)
         resource: Resource = props.get(
             typ=Resource,
-            raise_on_missing=ValueError(f"Expected a Resource declaration at '{ctx.getText()}'."),
+            raise_on_missing=ValueError(
+                f"Expected a Resource declaration at '{ctx.getText()}'."
+            ),
         )
         return ItemReader(
             resource=resource,
@@ -938,7 +1036,9 @@ class Preprocessor(ASLParserVisitor):
             reader_config=props.get(ReaderConfig),
         )
 
-    def visitReader_config_decl(self, ctx: ASLParser.Reader_config_declContext) -> ReaderConfig:
+    def visitReader_config_decl(
+        self, ctx: ASLParser.Reader_config_declContext
+    ) -> ReaderConfig:
         props = ReaderConfigProps()
         for child in ctx.children:
             cmp = self.visit(child)
@@ -965,10 +1065,14 @@ class Preprocessor(ASLParserVisitor):
         value = self._inner_string_of(ctx.string_literal())
         return CSVHeaderLocation(csv_header_location_value=value)
 
-    def visitCsv_headers_decl(self, ctx: ASLParser.Csv_headers_declContext) -> CSVHeaders:
+    def visitCsv_headers_decl(
+        self, ctx: ASLParser.Csv_headers_declContext
+    ) -> CSVHeaders:
         csv_headers: list[str] = []
         for child in ctx.children[3:-1]:
-            maybe_str = is_production(pt=child, rule_index=ASLParser.RULE_string_literal)
+            maybe_str = is_production(
+                pt=child, rule_index=ASLParser.RULE_string_literal
+            )
             if maybe_str is not None:
                 csv_headers.append(self._inner_string_of(maybe_str))
         # TODO: check for empty headers behaviour.
@@ -978,7 +1082,9 @@ class Preprocessor(ASLParserVisitor):
         self._raise_if_query_language_is_not(
             query_language_mode=QueryLanguageMode.JSONPath, ctx=ctx
         )
-        string_sampler: StringSampler = self.visitString_sampler(ctx=ctx.string_sampler())
+        string_sampler: StringSampler = self.visitString_sampler(
+            ctx=ctx.string_sampler()
+        )
         return MaxItemsPath(string_sampler=string_sampler)
 
     def visitMax_items_int(self, ctx: ASLParser.Max_items_intContext) -> MaxItemsInt:
@@ -987,7 +1093,9 @@ class Preprocessor(ASLParserVisitor):
     def visitMax_items_string_jsonata(
         self, ctx: ASLParser.Max_items_string_jsonataContext
     ) -> MaxItemsStringJSONata:
-        self._raise_if_query_language_is_not(query_language_mode=QueryLanguageMode.JSONata, ctx=ctx)
+        self._raise_if_query_language_is_not(
+            query_language_mode=QueryLanguageMode.JSONata, ctx=ctx
+        )
         string_jsonata: StringJSONata = self.visitString_jsonata(ctx.string_jsonata())
         return MaxItemsStringJSONata(string_jsonata=string_jsonata)
 
@@ -1006,7 +1114,9 @@ class Preprocessor(ASLParserVisitor):
         LOG.warning(
             "ToleratedFailureCount declarations currently have no effect on the program evaluation."
         )
-        string_jsonata: StringJSONata = self.visitString_jsonata(ctx=ctx.string_jsonata())
+        string_jsonata: StringJSONata = self.visitString_jsonata(
+            ctx=ctx.string_jsonata()
+        )
         return ToleratedFailurePercentageStringJSONata(string_jsonata=string_jsonata)
 
     def visitTolerated_failure_count_path(
@@ -1036,7 +1146,9 @@ class Preprocessor(ASLParserVisitor):
         LOG.warning(
             "ToleratedFailurePercentage declarations currently have no effect on the program evaluation."
         )
-        string_jsonata: StringJSONata = self.visitString_jsonata(ctx=ctx.string_jsonata())
+        string_jsonata: StringJSONata = self.visitString_jsonata(
+            ctx=ctx.string_jsonata()
+        )
         return ToleratedFailurePercentageStringJSONata(string_jsonata=string_jsonata)
 
     def visitTolerated_failure_percentage_path(
@@ -1055,14 +1167,18 @@ class Preprocessor(ASLParserVisitor):
         label = self._inner_string_of(parser_rule_context=ctx.string_literal())
         return Label(label=label)
 
-    def visitResult_writer_decl(self, ctx: ASLParser.Result_writer_declContext) -> ResultWriter:
+    def visitResult_writer_decl(
+        self, ctx: ASLParser.Result_writer_declContext
+    ) -> ResultWriter:
         props = StateProps()
         for child in ctx.children[3:-1]:
             cmp = self.visit(child)
             props.add(cmp)
         resource: Resource = props.get(
             typ=Resource,
-            raise_on_missing=ValueError(f"Expected a Resource declaration at '{ctx.getText()}'."),
+            raise_on_missing=ValueError(
+                f"Expected a Resource declaration at '{ctx.getText()}'."
+            ),
         )
         # TODO: add tests for arguments in jsonata blocks using result writer
         parargs: Parargs = props.get(
@@ -1091,7 +1207,9 @@ class Preprocessor(ASLParserVisitor):
     def visitRetrier_stmt(self, ctx: ASLParser.Retrier_stmtContext):
         return self.visit(ctx.children[0])
 
-    def visitError_equals_decl(self, ctx: ASLParser.Error_equals_declContext) -> ErrorEqualsDecl:
+    def visitError_equals_decl(
+        self, ctx: ASLParser.Error_equals_declContext
+    ) -> ErrorEqualsDecl:
         error_names: list[ErrorName] = []
         for child in ctx.children:
             cmp = self.visit(child)
@@ -1113,7 +1231,9 @@ class Preprocessor(ASLParserVisitor):
         error_name = self._inner_string_of(parser_rule_context=ctx.string_literal())
         return CustomErrorName(error_name=error_name)
 
-    def visitStates_error_name(self, ctx: ASLParser.States_error_nameContext) -> StatesErrorName:
+    def visitStates_error_name(
+        self, ctx: ASLParser.States_error_nameContext
+    ) -> StatesErrorName:
         pt: TerminalNodeImpl | None = is_terminal(ctx.children[0])
         if not pt:
             raise ValueError(f"Could not derive ErrorName in block '{ctx.getText()}'.")
@@ -1125,10 +1245,14 @@ class Preprocessor(ASLParserVisitor):
     ) -> IntervalSecondsDecl:
         return IntervalSecondsDecl(seconds=int(ctx.INT().getText()))
 
-    def visitMax_attempts_decl(self, ctx: ASLParser.Max_attempts_declContext) -> MaxAttemptsDecl:
+    def visitMax_attempts_decl(
+        self, ctx: ASLParser.Max_attempts_declContext
+    ) -> MaxAttemptsDecl:
         return MaxAttemptsDecl(attempts=int(ctx.INT().getText()))
 
-    def visitBackoff_rate_decl(self, ctx: ASLParser.Backoff_rate_declContext) -> BackoffRateDecl:
+    def visitBackoff_rate_decl(
+        self, ctx: ASLParser.Backoff_rate_declContext
+    ) -> BackoffRateDecl:
         return BackoffRateDecl(rate=float(ctx.children[-1].getText()))
 
     def visitMax_delay_seconds_decl(
@@ -1158,7 +1282,9 @@ class Preprocessor(ASLParserVisitor):
         for child in ctx.children:
             cmp: Component | None = self.visit(child)
             props.add(cmp)
-        if self._is_query_language(QueryLanguageMode.JSONPath) and not props.get(ResultPath):
+        if self._is_query_language(QueryLanguageMode.JSONPath) and not props.get(
+            ResultPath
+        ):
             props.add(CatcherDecl.DEFAULT_RESULT_PATH)
         return CatcherDecl.from_catcher_props(props=props)
 
@@ -1167,10 +1293,14 @@ class Preprocessor(ASLParserVisitor):
     ) -> PayloadValueFloat:
         return PayloadValueFloat(val=float(ctx.NUMBER().getText()))
 
-    def visitPayload_value_int(self, ctx: ASLParser.Payload_value_intContext) -> PayloadValueInt:
+    def visitPayload_value_int(
+        self, ctx: ASLParser.Payload_value_intContext
+    ) -> PayloadValueInt:
         return PayloadValueInt(val=int(ctx.INT().getText()))
 
-    def visitPayload_value_bool(self, ctx: ASLParser.Payload_value_boolContext) -> PayloadValueBool:
+    def visitPayload_value_bool(
+        self, ctx: ASLParser.Payload_value_boolContext
+    ) -> PayloadValueBool:
         bool_child: ParseTree = ctx.children[0]
         bool_term: TerminalNodeImpl | None = is_terminal(bool_child)
         if bool_term is None:
@@ -1181,20 +1311,28 @@ class Preprocessor(ASLParserVisitor):
         bool_val: bool = bool_term_rule == ASLLexer.TRUE
         return PayloadValueBool(val=bool_val)
 
-    def visitPayload_value_null(self, ctx: ASLParser.Payload_value_nullContext) -> PayloadValueNull:
+    def visitPayload_value_null(
+        self, ctx: ASLParser.Payload_value_nullContext
+    ) -> PayloadValueNull:
         return PayloadValueNull()
 
-    def visitPayload_value_str(self, ctx: ASLParser.Payload_value_strContext) -> PayloadValueStr:
-        string_literal: StringLiteral = self.visitString_literal(ctx=ctx.string_literal())
+    def visitPayload_value_str(
+        self, ctx: ASLParser.Payload_value_strContext
+    ) -> PayloadValueStr:
+        string_literal: StringLiteral = self.visitString_literal(
+            ctx=ctx.string_literal()
+        )
         return PayloadValueStr(val=string_literal.literal_value)
 
     def visitPayload_binding_sample(
         self, ctx: ASLParser.Payload_binding_sampleContext
     ) -> PayloadBindingStringExpressionSimple:
-        string_dollar: str = self._inner_string_of(parser_rule_context=ctx.STRINGDOLLAR())
+        string_dollar: str = self._inner_string_of(
+            parser_rule_context=ctx.STRINGDOLLAR()
+        )
         field = string_dollar[:-2]
-        string_expression_simple: StringExpressionSimple = self.visitString_expression_simple(
-            ctx.string_expression_simple()
+        string_expression_simple: StringExpressionSimple = (
+            self.visitString_expression_simple(ctx.string_expression_simple())
         )
         return PayloadBindingStringExpressionSimple(
             field=field, string_expression_simple=string_expression_simple
@@ -1203,11 +1341,17 @@ class Preprocessor(ASLParserVisitor):
     def visitPayload_binding_value(
         self, ctx: ASLParser.Payload_binding_valueContext
     ) -> PayloadBindingValue:
-        string_literal: StringLiteral = self.visitString_literal(ctx=ctx.string_literal())
+        string_literal: StringLiteral = self.visitString_literal(
+            ctx=ctx.string_literal()
+        )
         payload_value: PayloadValue = self.visit(ctx.payload_value_decl())
-        return PayloadBindingValue(field=string_literal.literal_value, payload_value=payload_value)
+        return PayloadBindingValue(
+            field=string_literal.literal_value, payload_value=payload_value
+        )
 
-    def visitPayload_arr_decl(self, ctx: ASLParser.Payload_arr_declContext) -> PayloadArr:
+    def visitPayload_arr_decl(
+        self, ctx: ASLParser.Payload_arr_declContext
+    ) -> PayloadArr:
         payload_values: list[PayloadValue] = []
         for child in ctx.children:
             cmp: Component | None = self.visit(child)
@@ -1215,7 +1359,9 @@ class Preprocessor(ASLParserVisitor):
                 payload_values.append(cmp)
         return PayloadArr(payload_values=payload_values)
 
-    def visitPayload_tmpl_decl(self, ctx: ASLParser.Payload_tmpl_declContext) -> PayloadTmpl:
+    def visitPayload_tmpl_decl(
+        self, ctx: ASLParser.Payload_tmpl_declContext
+    ) -> PayloadTmpl:
         payload_bindings: list[PayloadBinding] = []
         for child in ctx.children:
             cmp: Component | None = self.visit(child)
@@ -1223,7 +1369,9 @@ class Preprocessor(ASLParserVisitor):
                 payload_bindings.append(cmp)
         return PayloadTmpl(payload_bindings=payload_bindings)
 
-    def visitPayload_value_decl(self, ctx: ASLParser.Payload_value_declContext) -> PayloadValue:
+    def visitPayload_value_decl(
+        self, ctx: ASLParser.Payload_value_declContext
+    ) -> PayloadValue:
         value = ctx.children[0]
         return self.visit(value)
 
@@ -1259,7 +1407,9 @@ class Preprocessor(ASLParserVisitor):
     def visitState_machine(self, ctx: ASLParser.State_machineContext) -> Program:
         return self.visit(ctx.program_decl())
 
-    def visitQuery_language_decl(self, ctx: ASLParser.Query_language_declContext) -> QueryLanguage:
+    def visitQuery_language_decl(
+        self, ctx: ASLParser.Query_language_declContext
+    ) -> QueryLanguage:
         query_language_mode_int = ctx.children[-1].getSymbol().type
         query_language_mode = QueryLanguageMode(value=query_language_mode_int)
         return QueryLanguage(query_language_mode=query_language_mode)
@@ -1294,10 +1444,16 @@ class Preprocessor(ASLParserVisitor):
         # Return a JSONata expression resolver or a suppressed depending on the current language mode.
         current_query_language = self._get_current_query_language()
         if current_query_language.query_language_mode == QueryLanguageMode.JSONata:
-            string_jsonata: StringJSONata = self.visitString_jsonata(ctx.string_jsonata())
-            return AssignTemplateValueTerminalStringJSONata(string_jsonata=string_jsonata)
+            string_jsonata: StringJSONata = self.visitString_jsonata(
+                ctx.string_jsonata()
+            )
+            return AssignTemplateValueTerminalStringJSONata(
+                string_jsonata=string_jsonata
+            )
         else:
-            inner_string_value = self._inner_string_of(parser_rule_context=ctx.string_jsonata())
+            inner_string_value = self._inner_string_of(
+                parser_rule_context=ctx.string_jsonata()
+            )
             return AssignTemplateValueTerminalLit(value=inner_string_value)
 
     def visitAssign_template_value_terminal_string_literal(
@@ -1332,7 +1488,9 @@ class Preprocessor(ASLParserVisitor):
     def visitAssign_template_binding_value(
         self, ctx: ASLParser.Assign_template_binding_valueContext
     ) -> AssignTemplateBindingValue:
-        string_literal: StringLiteral = self.visitString_literal(ctx=ctx.string_literal())
+        string_literal: StringLiteral = self.visitString_literal(
+            ctx=ctx.string_literal()
+        )
         assign_value: AssignTemplateValue = self.visit(ctx.assign_template_value())
         return AssignTemplateBindingValue(
             identifier=string_literal.literal_value, assign_value=assign_value
@@ -1343,8 +1501,8 @@ class Preprocessor(ASLParserVisitor):
     ) -> AssignTemplateBindingStringExpressionSimple:
         identifier: str = self._inner_string_of(ctx.STRINGDOLLAR())
         identifier = identifier[:-2]
-        string_expression_simple: StringExpressionSimple = self.visitString_expression_simple(
-            ctx.string_expression_simple()
+        string_expression_simple: StringExpressionSimple = (
+            self.visitString_expression_simple(ctx.string_expression_simple())
         )
         return AssignTemplateBindingStringExpressionSimple(
             identifier=identifier, string_expression_simple=string_expression_simple
@@ -1367,7 +1525,9 @@ class Preprocessor(ASLParserVisitor):
         return bindings
 
     def visitAssign_decl(self, ctx: ASLParser.Assign_declContext) -> AssignDecl:
-        declaration_bindings: list[AssignDeclBinding] = self.visit(ctx.assign_decl_body())
+        declaration_bindings: list[AssignDeclBinding] = self.visit(
+            ctx.assign_decl_body()
+        )
         return AssignDecl(declaration_bindings=declaration_bindings)
 
     def visitJsonata_template_value_terminal_float(
@@ -1441,14 +1601,18 @@ class Preprocessor(ASLParserVisitor):
     def visitArguments_string_jsonata(
         self, ctx: ASLParser.Arguments_string_jsonataContext
     ) -> ArgumentsStringJSONata:
-        self._raise_if_query_language_is_not(query_language_mode=QueryLanguageMode.JSONata, ctx=ctx)
+        self._raise_if_query_language_is_not(
+            query_language_mode=QueryLanguageMode.JSONata, ctx=ctx
+        )
         string_jsonata: StringJSONata = self.visitString_jsonata(ctx.string_jsonata())
         return ArgumentsStringJSONata(string_jsonata=string_jsonata)
 
     def visitArguments_jsonata_template_value_object(
         self, ctx: ASLParser.Arguments_jsonata_template_value_objectContext
     ) -> ArgumentsJSONataTemplateValueObject:
-        self._raise_if_query_language_is_not(query_language_mode=QueryLanguageMode.JSONata, ctx=ctx)
+        self._raise_if_query_language_is_not(
+            query_language_mode=QueryLanguageMode.JSONata, ctx=ctx
+        )
         jsonata_template_value_object: JSONataTemplateValueObject = self.visit(
             ctx.jsonata_template_value_object()
         )
@@ -1457,7 +1621,9 @@ class Preprocessor(ASLParserVisitor):
         )
 
     def visitOutput_decl(self, ctx: ASLParser.Output_declContext) -> Output:
-        jsonata_template_value: JSONataTemplateValue = self.visit(ctx.jsonata_template_value())
+        jsonata_template_value: JSONataTemplateValue = self.visit(
+            ctx.jsonata_template_value()
+        )
         return Output(jsonata_template_value=jsonata_template_value)
 
     def visitItems_array(self, ctx: ASLParser.Items_arrayContext) -> ItemsArray:
@@ -1470,14 +1636,20 @@ class Preprocessor(ASLParserVisitor):
         string_jsonata: StringJSONata = self.visitString_jsonata(ctx.string_jsonata())
         return ItemsJSONata(string_jsonata=string_jsonata)
 
-    def visitString_sampler(self, ctx: ASLParser.String_samplerContext) -> StringSampler:
+    def visitString_sampler(
+        self, ctx: ASLParser.String_samplerContext
+    ) -> StringSampler:
         return self.visit(ctx.children[0])
 
-    def visitString_literal(self, ctx: ASLParser.String_literalContext) -> StringLiteral:
+    def visitString_literal(
+        self, ctx: ASLParser.String_literalContext
+    ) -> StringLiteral:
         string_literal = from_string_literal(parser_rule_context=ctx)
         return StringLiteral(literal_value=string_literal)
 
-    def visitString_jsonpath(self, ctx: ASLParser.String_jsonpathContext) -> StringJsonPath:
+    def visitString_jsonpath(
+        self, ctx: ASLParser.String_jsonpathContext
+    ) -> StringJsonPath:
         json_path: str = self._inner_string_of(parser_rule_context=ctx)
         return StringJsonPath(json_path=json_path)
 
@@ -1494,10 +1666,16 @@ class Preprocessor(ASLParserVisitor):
             self._get_current_query_language().query_language_mode
         )
         expression: str = self._inner_string_of(parser_rule_context=ctx)
-        return StringVariableSample(query_language_mode=query_language_mode, expression=expression)
+        return StringVariableSample(
+            query_language_mode=query_language_mode, expression=expression
+        )
 
-    def visitString_jsonata(self, ctx: ASLParser.String_jsonataContext) -> StringJSONata:
-        self._raise_if_query_language_is_not(query_language_mode=QueryLanguageMode.JSONata, ctx=ctx)
+    def visitString_jsonata(
+        self, ctx: ASLParser.String_jsonataContext
+    ) -> StringJSONata:
+        self._raise_if_query_language_is_not(
+            query_language_mode=QueryLanguageMode.JSONata, ctx=ctx
+        )
         expression = self._inner_jsonata_expr(ctx=ctx)
         return StringJSONata(expression=expression)
 
@@ -1507,5 +1685,6 @@ class Preprocessor(ASLParserVisitor):
         intrinsic_function_derivation = ctx.STRINGINTRINSICFUNC().getText()[1:-1]
         function, _ = IntrinsicParser.parse(intrinsic_function_derivation)
         return StringIntrinsicFunction(
-            intrinsic_function_derivation=intrinsic_function_derivation, function=function
+            intrinsic_function_derivation=intrinsic_function_derivation,
+            function=function,
         )
